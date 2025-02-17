@@ -23,6 +23,7 @@ jobs:
         tags: |
           gapawe123/aula-primeira-pipeline:v${{ github.run_number }}  
           gapawe123/aula-primeira-pipeline:latest 
+          
         
   
     
