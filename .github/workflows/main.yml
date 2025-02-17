@@ -21,9 +21,9 @@ jobs:
         file: ./src/Dockerfile
         push: true
         tags: |
-          gapawe123/aula-primeira-pipeline:v${{ github.run_number }}  
-          gapawe123/aula-primeira-pipeline:latest 
-          
+          gapawe123/primeira-pipeline-cicd:v${{ github.run_number }}  
+          gapawe123/primeira-pipeline-cicd:latest 
+
         
   
     
