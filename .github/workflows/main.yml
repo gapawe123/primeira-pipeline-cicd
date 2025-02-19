@@ -41,7 +41,7 @@ jobs:
            ./k8s/deployment.yaml
         images: |
           gabriellayback/primeira-pipeline-cicd:v${{ github.run_number }}
-
+ 
 
         
   
