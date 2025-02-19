@@ -23,6 +23,24 @@ jobs:
         tags: |
           gabriellayback/primeira-pipeline-cicd:v${{ github.run_number }}  
           gabriellayback/primeira-pipeline-cicd:latest 
+  CD:
+    runs-on: ubuntu-latest
+    needs: [CI]
+    steps:
+    - name: Obtendo o codigo
+      uses: actions/checkout@v4.2.2
+    - name: configuracao de contexto do Kubernetes
+      uses: azure/k8s-set-context@v4
+      with:
+       method: kubeconfig
+       kubeconfig: ${{ secrets.K8S_CONFIG }}
+    - name: Execucao do manifesto   
+      uses: Azure/k8s-deploy@v5
+      with:
+        manifests: |
+           ./k8s/deployment.yaml
+        images: |
+          gabriellayback/primeira-pipeline-cicd:v${{ github.run_number }}
 
 
         
